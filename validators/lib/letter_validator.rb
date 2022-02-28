@@ -4,6 +4,7 @@ class LetterValidator
   def validate(letter)
     raise InvalidLetterError if letter.length > 1
     return [:vowel] if letter.match(/[aeiou+]/)
+    return [:consonant] if letter.match(/[^aeiou+]/)
     end
   end
 
