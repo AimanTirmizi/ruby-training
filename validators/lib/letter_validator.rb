@@ -10,6 +10,7 @@ class LetterValidator
 
   def validate(letter)
     raise InvalidLetterError if letter.length > 1
+    values << validate_type(letter)
   end
 
   def validate_type(letter)
