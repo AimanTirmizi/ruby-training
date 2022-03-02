@@ -12,6 +12,7 @@ class NumberValidator
     values << validate_type(number)
     values << multiples_of_three(number)
     values << multiples_of_five(number)
+    values << multiples_of_seven(number)
   end
 
   def validate_type(number)
