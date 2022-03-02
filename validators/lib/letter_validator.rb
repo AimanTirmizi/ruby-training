@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 class LetterValidator
+
+  attr_reader :values
+
+  def initialize
+    @values = []
+  end
+
   def validate(letter)
     raise InvalidLetterError if letter.length > 1
   end
