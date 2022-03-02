@@ -10,6 +10,11 @@ class NumberValidator
   def validate(number)
     raise ArgumentError if number.is_a?(String)
     values << validate_type(number)
+    validate_multiples(number)
+
+  end
+
+  def validate_multiples(number)
     values << multiples_of_three(number)
     values << multiples_of_five(number)
     values << multiples_of_seven(number)
