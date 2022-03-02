@@ -9,6 +9,7 @@ class NumberValidator
 
   def validate(number)
     raise ArgumentError if number.is_a?(String)
+    values << validate_type(number)
   end
 
   def validate_type(number)
