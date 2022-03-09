@@ -23,7 +23,7 @@ describe Bottles do
   end
 
   it 'can sing about 2 bottles' do
-    skip
+
     expected = "2 bottles of beer on the wall, 2 bottles of beer.\nTake one down and pass it around, 1 bottle of beer on the wall.\n"
     expect(bottles.verse(2)).to eq(expected)
   end
