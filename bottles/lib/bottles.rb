@@ -10,7 +10,6 @@ class Bottles
   end
 
   def number_of_bottles(number)
-      bottlesOnWall = "bottles of beer on the wall"
-      "#{number} #{bottlesOnWall}, #{number} bottles of beer.\nTake one down and pass it around, #{number - 1} #{bottlesOnWall}.\n"
+      "#{number} bottles of beer on the wall, #{number} bottles of beer.\nTake one down and pass it around, #{number - 1} bottles of beer on the wall.\n"
   end
 end
