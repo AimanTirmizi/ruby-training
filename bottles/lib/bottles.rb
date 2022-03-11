@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 class Bottles
-  def verse(first_verse)
-    number_of_bottles(first_verse)
-  end
-
   def verses(first_verse, last_verse)
     first_verse.downto(last_verse).map {|number| verse(number)}.join("\n") + "\n"
   end
@@ -13,7 +9,7 @@ class Bottles
     verses(99,0)
   end
 
-  def number_of_bottles(number)
+  def verse(number)
     if number == 0
       "No more bottles of beer on the wall, " +
       "no more bottles of beer.\n" +
