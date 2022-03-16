@@ -3,7 +3,7 @@
 class Dice
   attr_reader :values
 
-  def roll
+  def roll(value = 1)
     @values = []
   end
 end
