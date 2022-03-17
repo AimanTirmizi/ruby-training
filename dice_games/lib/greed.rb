@@ -5,11 +5,20 @@ class Greed
 
   def score(numbers = nil)
     if numbers == nil
-    raise GreedError
+      raise GreedError
     elsif numbers == []
-    0
+      0
+    elsif numbers.length == 1
+      simple_scoring(numbers[0])
     end
   end
+
+  def simple_scoring(value)
+    return 100 if value == 1
+    return 50 if value == 5
+    return 0 if value == 2 || value == 3 || value == 4 || value == 6
+  end
+
 end
 
 class GreedError < StandardError
