@@ -12,6 +12,8 @@ class Greed
       simple_scoring(numbers[0])
     elsif numbers.length == 3
       triple_scoring(numbers[0])
+    else
+      range_scoring(numbers)
     end
   end
 
@@ -24,6 +26,18 @@ class Greed
   def triple_scoring(value)
     return 1000 if value == 1
     return value * 100
+  end
+
+  def range_scoring(arr)
+    if arr.uniq.length == arr.length
+      unique_scoring(arr)
+    end
+  end
+
+  def unique_scoring(value)
+    total_score = 0
+    value.map { |item| total_score += simple_scoring(item) }
+    return total_score
   end
 end
 
