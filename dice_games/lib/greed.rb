@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 class Greed
-  def score
+  numbers = Array.new
+
+  def score(numbers = nil)
+    if numbers == nil
     raise GreedError
-  end
+    end
+   end
 end
 
 class GreedError < StandardError
