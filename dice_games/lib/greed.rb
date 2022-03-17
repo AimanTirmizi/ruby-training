@@ -6,8 +6,10 @@ class Greed
   def score(numbers = nil)
     if numbers == nil
     raise GreedError
+    elsif numbers == []
+    0
     end
-   end
+  end
 end
 
 class GreedError < StandardError
