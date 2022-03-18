@@ -45,22 +45,15 @@ class Greed
     total_score = 0
     myHash  = arr.tally #=> { 4 => 4, 5 => 1 }
     myHash.each {|number, occurrence|
-    if occurrence == 1
-        total_score += simple_scoring(number)
-      elsif occurrence == 2
-        total_score += simple_scoring(number)
-        total_score += simple_scoring(number)
-      elsif occurrence >= 3
+      remaining = occurrence
+      while remaining >= 3
         total_score += triple_scoring(number)
-        remaining = occurrence - 3
-      if remaining == 1
-        total_score += simple_scoring(number)
+        remaining -= 3
       end
-      if remaining == 2
+      while remaining > 0 && remaining < 3
         total_score += simple_scoring(number)
-        total_score += simple_scoring(number)
+        remaining -= 1
       end
-    end
     }
     return total_score
   end
