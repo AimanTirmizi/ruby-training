@@ -11,4 +11,20 @@ class LCD
     # " _ \n|_|\n|_|\n" = 8
   end
 
+  def renderEmptyString
+    " "
+  end
+
+  def renderDash
+    "_"
+  end
+
+  def renderNewLine
+    "\n"
+  end
+
+  def renderVertical
+    "|_|"
+  end
+
 end
