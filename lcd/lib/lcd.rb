@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
 class LCD
-  # Write your code in here
+
+  attr_reader :digits
+
+  def initialize(digits)
+    @digits = digits
+  end
+
 end
