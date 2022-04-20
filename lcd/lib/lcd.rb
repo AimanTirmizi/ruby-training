@@ -8,4 +8,8 @@ class LCD
     @digits = digits
   end
 
+  def render
+
+  end
+
 end
