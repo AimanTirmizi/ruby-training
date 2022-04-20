@@ -4,8 +4,8 @@ class LCD
 
   attr_reader :digits
 
-  def initialize(digits)
-    @digits = digits
+  def initialize(digit)
+    @digits = digit
   end
 
   def render
