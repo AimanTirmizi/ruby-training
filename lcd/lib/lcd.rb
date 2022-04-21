@@ -27,4 +27,12 @@ class LCD
     "|_|"
   end
 
+  def horizontalState
+    renderEmptyString + renderDash + renderEmptyString + "\n"
+  end
+
+  def verticalState
+    renderVertical + renderNewLine + renderVertical + "\n"
+  end
+
 end
