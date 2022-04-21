@@ -8,10 +8,13 @@ class LCD
   end
 
   def render
-    # " _ \n|_|\n|_|\n" = 8
     case digits
     when 8
       horizontalState + verticalState + verticalState
+    when 0
+      verticalDigitState
+    when 6
+      horizontalState + renderPipes + renderUnderscore + renderSpace + renderNewLine + verticalState
     end
   end
 
@@ -39,4 +42,10 @@ class LCD
     renderPipes + renderUnderscore + renderPipes + renderNewLine
   end
 
+  def verticalDigitState
+    if digits == 0
+      horizontalState + renderPipes + renderSpace + renderPipes + renderNewLine + verticalState
+    end
+  end
 end
+
