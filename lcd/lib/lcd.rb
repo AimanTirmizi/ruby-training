@@ -9,6 +9,9 @@ class LCD
 
   def render
     # " _ \n|_|\n|_|\n" = 8
+      if digits == 8
+        horizontalState + verticalState
+      end
   end
 
   def renderEmptyString
