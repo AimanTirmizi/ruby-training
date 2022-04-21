@@ -9,16 +9,17 @@ class LCD
 
   def render
     # " _ \n|_|\n|_|\n" = 8
-      if digits == 8
-        horizontalState + verticalState
-      end
+    case digits
+    when 8
+      horizontalState + verticalState + verticalState
+    end
   end
 
-  def renderEmptyString
+  def renderSpace
     " "
   end
 
-  def renderDash
+  def renderUnderscore
     "_"
   end
 
@@ -26,16 +27,16 @@ class LCD
     "\n"
   end
 
-  def renderVertical
-    "|_|"
+  def renderPipes
+    "|"
   end
 
   def horizontalState
-    renderEmptyString + renderDash + renderEmptyString + "\n"
+    renderSpace + renderUnderscore + renderSpace + renderNewLine
   end
 
   def verticalState
-    renderVertical + renderNewLine + renderVertical + "\n"
+    renderPipes + renderUnderscore + renderPipes + renderNewLine
   end
 
 end
