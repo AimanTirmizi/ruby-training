@@ -34,20 +34,6 @@ class LCD
     "|"
   end
 
-  def horizontalState
-    renderSpace + renderUnderscore + renderSpace + renderNewLine
-  end
-
-  def verticalState
-    renderPipes + renderUnderscore + renderPipes + renderNewLine
-  end
-
-  def verticalDigitState
-    if digits == 0
-      horizontalState + renderPipes + renderSpace + renderPipes + renderNewLine + verticalState
-    end
-  end
-
   def matrixDisplay
     {
       8 => [" _ ", "\n", "|", "_", "|", "\n", "|", "_", "|", "\n"],
