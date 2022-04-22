@@ -10,11 +10,11 @@ class LCD
   def render
     case digits
     when 8
-      horizontalState + verticalState + verticalState
+      matrixDisplay[8].join
     when 0
-      verticalDigitState
+      matrixDisplay[0].join
     when 6
-      horizontalState + renderPipes + renderUnderscore + renderSpace + renderNewLine + verticalState
+      matrixDisplay[6].join
     end
   end
 
@@ -46,6 +46,14 @@ class LCD
     if digits == 0
       horizontalState + renderPipes + renderSpace + renderPipes + renderNewLine + verticalState
     end
+  end
+
+  def matrixDisplay
+    {
+      8 => [" _ ", "\n", "|", "_", "|", "\n", "|", "_", "|", "\n"],
+      6 => [" _ ", "\n", "|", "_", " ", "\n", "|", "_", "|", "\n"],
+      0 => [" _ ", "\n", "|", " ", "|", "\n", "|", "_", "|", "\n"]
+    }
   end
 end
 
