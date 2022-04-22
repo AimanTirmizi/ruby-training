@@ -18,19 +18,19 @@ class LCD
     end
   end
 
-  def renderSpace
+  def space
     " "
   end
 
-  def renderUnderscore
+  def underscore
     "_"
   end
 
-  def renderNewLine
+  def newline
     "\n"
   end
 
-  def renderPipes
+  def pipe
     "|"
   end
 
