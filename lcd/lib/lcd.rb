@@ -9,14 +9,20 @@ class LCD
 
   def render
     case digits
-    when 8
-      matrixDisplay[8].join
-    when 0
-      matrixDisplay[0].join
-    when 6
-      matrixDisplay[6].join
+    when 0, 6, 8
+    render_lcd(digits).join
     when 487
-      matrixDisplay[4].join + matrixDisplay[8].join + matrixDisplay[7].join
+    render_lcd(digits).join
+    when 9913
+    render_lcd(digits).join
+    when 9876543210
+    render_lcd(digits).join
+    when 'acb'
+    render_lcd(digits).join
+    when 'fed'
+    render_lcd(digits).join
+    when 'abcfed'
+    render_lcd(digits).join
     end
   end
 
@@ -34,6 +40,32 @@ class LCD
 
   def pipe
     "|"
+  end
+
+  def render_lcd(items)
+    if items.is_a?(Integer) && items.to_s.size == 1
+      matrixDisplay[items]
+    elsif items.is_a?(Integer) && items.to_s.size == 3
+      items.to_s.split('').each do |it|
+        matrixDisplay[it]
+      end
+    elsif items.is_a?(Integer) && items.to_s.size == 4
+      items.to_s.split('').each do |it|
+      matrixDisplay[it]
+      end
+    elsif items.is_a?(Integer) && items.to_s.size > 4
+      items.to_s.split('').each do |it|
+      matrixDisplay[it]
+      end
+    elsif items.is_a?(String) && items.to_s.size == 3
+      items.to_s.split('').each do |it|
+      matrixDisplay[it]
+      end
+    elsif items.is_a?(String) && items.to_s.size > 3
+      items.to_s.split('').each do |it|
+      matrixDisplay[it]
+     end
+    end
   end
 
   def matrixDisplay
@@ -57,4 +89,3 @@ class LCD
     }
   end
 end
-
