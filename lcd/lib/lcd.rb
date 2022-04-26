@@ -8,30 +8,15 @@ class LCD
   end
 
   def render
-    case digits
-    when 0, 6, 8
     render_lcd(digits).join
-    when 487
-    render_lcd(digits).join
-    when 9913
-    render_lcd(digits).join
-    when 9876543210
-    render_lcd(digits).join
-    when 'acb'
-    render_lcd(digits).join
-    when 'fed'
-    render_lcd(digits).join
-    when 'abcfed'
-    render_lcd(digits).join
-    end
   end
 
   def space
-    " "
+    ' '
   end
 
   def underscore
-    "_"
+    '_'
   end
 
   def newline
@@ -39,33 +24,12 @@ class LCD
   end
 
   def pipe
-    "|"
+    '|'
   end
 
   def render_lcd(items)
-    if items.is_a?(Integer) && items.to_s.size == 1
-      matrixDisplay[items]
-    elsif items.is_a?(Integer) && items.to_s.size == 3
-      items.to_s.split('').each do |it|
-        matrixDisplay[it]
-      end
-    elsif items.is_a?(Integer) && items.to_s.size == 4
-      items.to_s.split('').each do |it|
-      matrixDisplay[it]
-      end
-    elsif items.is_a?(Integer) && items.to_s.size > 4
-      items.to_s.split('').each do |it|
-      matrixDisplay[it]
-      end
-    elsif items.is_a?(String) && items.to_s.size == 3
-      items.to_s.split('').each do |it|
-      matrixDisplay[it]
-      end
-    elsif items.is_a?(String) && items.to_s.size > 3
-      items.to_s.split('').each do |it|
-      matrixDisplay[it]
-     end
-    end
+    # convert string or numbers into array & iterate through it
+    matrixDisplay[items]
   end
 
   def matrixDisplay
