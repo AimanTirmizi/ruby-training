@@ -8,7 +8,7 @@ class LCD
   end
 
   def render
-    render_lcd(digits).join
+    render_lcd(digits)
   end
 
   def space
@@ -31,18 +31,18 @@ class LCD
     # convert string or numbers into array & iterate through it
     array = []
     if items.is_a?(Integer)
-      items.digits.reverse.each { |lcd|
-        array << matrixDisplay[lcd]
-      }
-      array
+      items.digits.reverse.each { |lcd| array << matrix_display[lcd] }
+    else
+      items.chars.each { |lcd| array << matrix_display[lcd] }
     end
+    array.join
   end
 
-  def matrixDisplay
+  def matrix_display
     {
       0 => [space, underscore, space, newline, pipe, space, pipe, newline, pipe, underscore, pipe, newline],
       1 => [newline, space, space, pipe, newline, space, space, pipe, newline],
-      2 => [space, underscore, newline, space, underscore, pipe, newline, pipe, underscore],
+      2 => [space, underscore, newline, space, underscore, pipe, newline, pipe, underscore, newline],
       3 => [underscore, space, newline, underscore, pipe, newline, underscore, pipe, newline],
       4 => [pipe, underscore, pipe, newline, space, space, pipe, newline],
       5 => [space, underscore, space, newline, pipe, underscore, newline, space, underscore, pipe, newline],
@@ -54,8 +54,8 @@ class LCD
       'b' => [pipe, underscore, space, newline, pipe, underscore, pipe, newline],
       'c' => [space, underscore, space, newline, pipe, space, newline, pipe, underscore, space, newline],
       'd' => [space, underscore, pipe, newline, pipe, underscore, pipe, newline],
-      'e' => [space, underscore, space, newline, pipe, underscore, newline, pipe, underscore],
-      'f' => [space, underscore, space, newline, pipe, underscore, newline, pipe]
+      'e' => [space, underscore, space, newline, pipe, underscore, newline, pipe, newline],
+      'f' => [space, underscore, space, newline, pipe, underscore, newline, pipe, newline]
     }
   end
 end
