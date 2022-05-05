@@ -10,4 +10,9 @@ class Proxy
   def method_missing(method_name, *args, &block)
     proxy_object.send(method_name, *args, &block)
   end
+
+  def messages
+    [:upcase, :split]
+  end
+
 end
