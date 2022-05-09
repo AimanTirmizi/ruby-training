@@ -21,7 +21,7 @@ class Proxy
     messages.include?(method_name)
   end
 
-  def on?
-    proxy_object
+  def respond_to?(method_name)
+    proxy_object.respond_to?(method_name)
   end
 end
