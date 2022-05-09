@@ -22,6 +22,6 @@ class Proxy
   end
 
   def respond_to?(method_name)
-    proxy_object.respond_to?(method_name)
+    proxy_object.respond_to?(method_name) || super(method_name)
   end
 end
