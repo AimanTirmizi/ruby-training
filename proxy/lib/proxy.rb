@@ -20,4 +20,8 @@ class Proxy
   def called?(method_name)
     messages.include?(method_name)
   end
+
+  def on?
+    proxy_object
+  end
 end
