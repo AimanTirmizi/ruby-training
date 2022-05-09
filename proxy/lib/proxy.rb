@@ -16,4 +16,8 @@ class Proxy
   def number_of_times_called(method_name)
     messages.count(method_name)
   end
+
+  def called?(method_name)
+    messages.include?(method_name)
+  end
 end
