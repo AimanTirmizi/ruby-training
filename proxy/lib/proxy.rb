@@ -12,4 +12,8 @@ class Proxy
     messages << method_name
     proxy_object.send(method_name, *args, &block)
   end
+
+  def number_of_times_called(method_name)
+    messages.count(method_name)
+  end
 end
