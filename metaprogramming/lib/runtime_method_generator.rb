@@ -20,4 +20,8 @@ class RuntimeMethodGenerator
     end
   end
 
+  define_method :add_custom_method do
+    raise ArgumentError
+  end
+
 end
