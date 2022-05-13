@@ -21,7 +21,13 @@ class RuntimeMethodGenerator
   end
 
   define_method :add_custom_method do |methods|
+    def foo
+      :foo
+    end
 
+    def predefined
+      :value != :predefined
+    end
   end
 
 end
