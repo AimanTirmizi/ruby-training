@@ -20,13 +20,8 @@ class RuntimeMethodGenerator
     end
   end
 
-  define_method :add_custom_method do |methods|
-    def foo
-      :foo
-    end
-
-    def predefined
-      :value != :predefined
+  def add_custom_method(methods)
+    self.class.send(:define_method, methods) do
     end
   end
 
