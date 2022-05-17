@@ -13,4 +13,16 @@ class RuntimeMethodGenerator
   def return_funky
     :funky
   end
+
+  def add_a_method
+    self.class.send(:define_method, :funky_method) do
+      return_funky
+    end
+  end
+
+  def add_custom_method(methods)
+    self.class.send(:define_method, methods) do
+    end
+  end
+
 end
