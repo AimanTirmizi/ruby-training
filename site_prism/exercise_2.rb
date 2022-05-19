@@ -11,14 +11,25 @@ page.load
 
 # EXERCISE 2
 # Grab the heading of the page, type it into the field and then get the value of it
+number_box = page.number_box
+title = page.title
+number_box.send_keys(title)
+value = number_box['value']
+puts value
 
 # 1) Find the number box on the page
+number_box = page.number_box
 
 # 2) Find the text property of the heading
+header = page.heading
+puts header.text
 
 # 3) Type it into the field
+number_box.send_keys(header)
 
 # 4) Find out the value inside the field
+value = number_box['value']
+puts value
 
 # Wait and close
 sleep 2
